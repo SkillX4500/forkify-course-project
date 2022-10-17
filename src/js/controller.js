@@ -10,14 +10,6 @@ import recipeView from './views/recipeView';
 import resultsView from './views/resultsView';
 import searchView from './views/searchView';
 
-// if (module.hot) {
-//   module.hot.accept();
-// }
-
-// https://forkify-api.herokuapp.com/v2
-
-///////////////////////////////////////
-
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
@@ -128,6 +120,10 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
+function newFeature() {
+  console.log('New Feature !');
+}
+
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRenderer(controlRecipes);
@@ -136,6 +132,7 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerPage(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
+  newFeature();
 };
 
 init();
